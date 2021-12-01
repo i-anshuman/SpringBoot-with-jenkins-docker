@@ -1,5 +1,6 @@
 package com.application.controllers;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import org.springframework.http.HttpStatus;
@@ -21,6 +22,12 @@ public class HomeController {
   @GetMapping("/timestamp")
   public ResponseEntity<?> timestamp() {
     LocalDateTime timestamp = LocalDateTime.now();
+    return ResponseEntity.status(HttpStatus.ACCEPTED).body(timestamp);
+  }
+  
+  @GetMapping("/date")
+  public ResponseEntity<?> date() {
+    LocalDate timestamp = LocalDate.now();
     return ResponseEntity.status(HttpStatus.ACCEPTED).body(timestamp);
   }
 }
