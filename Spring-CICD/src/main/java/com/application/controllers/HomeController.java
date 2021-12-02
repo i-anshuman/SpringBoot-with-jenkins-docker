@@ -2,6 +2,7 @@ package com.application.controllers;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,7 +28,13 @@ public class HomeController {
   
   @GetMapping("/date")
   public ResponseEntity<?> date() {
-    LocalDate timestamp = LocalDate.now();
-    return ResponseEntity.status(HttpStatus.ACCEPTED).body(timestamp);
+    LocalDate date = LocalDate.now();
+    return ResponseEntity.status(HttpStatus.ACCEPTED).body(date);
+  }
+  
+  @GetMapping("/time")
+  public ResponseEntity<?> time() {
+    LocalTime time = LocalTime.now();
+    return ResponseEntity.status(HttpStatus.ACCEPTED).body(time);
   }
 }
