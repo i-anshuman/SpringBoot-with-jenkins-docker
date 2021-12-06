@@ -37,4 +37,10 @@ public class HomeController {
     LocalTime time = LocalTime.now();
     return ResponseEntity.status(HttpStatus.ACCEPTED).body(time);
   }
+  
+  @GetMapping("/hello")
+  public ResponseEntity<?> hello() {
+    String message = "Welcome dear, how're you ?";
+    return ResponseEntity.status(HttpStatus.ACCEPTED).body(message);
+  }
 }
